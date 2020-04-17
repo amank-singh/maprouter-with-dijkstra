@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - MapRouter with Dijkstra</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="menu">
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">1</span> Upload map
+      </div>
+      <div class="menu-item-content open">
+        <label class="file-upload">
+          <input type="file" id="map-file" name="map-file" />
+            upload map
+        </label>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">2</span> add routes
+      </div>
+      <div class="menu-item-content">
+        <ul class="description">
+          <li>
+            click anywhere on the map to add a <span class="target-icon"></span> target.
+          </li>
+          <li>
+            click on a <span class="target-icon"></span> target and then on another <span class="target-icon"></span> target to create a <span class="target-icon"></span><span class="route-icon"></span><span class="target-icon"></span> route.
+          </li>
+          <li>
+            click on a <span class="target-icon"></span> target and then somewhere else to create a <span class="target-icon"></span><span class="route-icon"></span><span class="crossing-icon"></span> route to a <span class="crossing-icon"></span> crossing.
+            clicking somewhere else will expand this <span class="crossing-icon"></span><span class="route-icon"></span><span class="crossing-icon"></span> route to a new <span class="crossing-icon"></span> crossing. clicking on a <span class="target-icon"></span>            target or <span class="crossing-icon"></span> crossing will end the <span class="crossing-icon"></span><span class="route-icon"></span><span class="target-icon"></span> route.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">3</span> change names
+      </div>
+      <div class="menu-item-content">
+        <select id="name-list">
+        </select>
+        <input type="text" id="name-field">
+        <button id="rename-button">
+          rename
+        </button>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">4</span> set scale
+      </div>
+      <div class="menu-item-content">
+        <span>1 Pixel =</span>
+        <input type="text" id="scale-number" value="1.0">
+        <select id="scale-unit">
+          <option>m</option>
+          <option>km</option>
+          <option>ft</option>
+          <option>mi</option>
+        </select>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">5</span> calculate path
+      </div>
+      <div class="menu-item-content">
+        <div class="calculate-path-targets">
+          <select id="from">
+          </select>
+        </div>
+        <div class="calculate-path-targets">
+          <select id="to">
+          </select>
+        </div>
+        <button id="calculate-path">
+        calculate shortest path
+      </button>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">6</span> import routes
+      </div>
+      <div class="menu-item-content">
+        <label class="file-upload">
+          <input type="file" id="import-file" name="import-file" />
+            import routes
+        </label>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-number">7</span> export routes
+      </div>
+      <div class="menu-item-content">
+        <button id="export">
+          export
+        </button>
+      </div>
+    </div>
+    <div id="result">
+    </div>
+  </div>
+  <div class="map-content">
+    <div id="road-mapper">
+      <div id="map">
+      </div>
+      <div id="mapper">
+        <svg style="">
+        </svg>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.menu {
+  display: inline-block;
+  width: 220px;
+  float: left;
+}
+
+.map-content {
+  display: inline-block;
+  width: calc(100% - 220px);
+  padding-left: 10px;
+}
+
+.menu-item-head {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-item-number {
+  display: inline-block;
+  text-align: center;
+  padding-top: 2px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.menu-item-content {
+  display: none;
+  border: 1px solid #000;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.menu-item-content.open {
+  display: block;
+}
+
+#road-mapper {
+  display: none;
+  position: relative;
+}
+
+#map {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+#mapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#mapper > svg {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+#mapper > svg > circle {
+  fill: #000;
+  stroke: #fff;
+  stroke-width: 1;
+  cursor: pointer;
+}
+
+#mapper > svg > circle.selected {
+  fill: red;
+}
+
+#mapper > svg > line {
+  stroke: #fff;
+  stroke-width: 2;
+  margin-left: 200px;
+}
+
+.calculate-path-targets {
+  display: inline-block;
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.calculate-path-targets:last-child {
+  float: left;
+}
+
+select#from,
+select#to{
+  width: 100%;
+  height: 29px;
+}
+
+.label {
+  position: absolute;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+label.file-upload,
+button {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+label.file-upload:hover,
+button:hover {
+  background-color: #ccc;
+}
+
+label.file-upload input[type="file"] {
+  display: none;
+}
+
+ul.description {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.description li {
+  margin-bottom: 8px;
+}
+
+ul.description li:last-child {
+  margin-bottom: 0;
+}
+
+span.target-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+span.crossing-icon {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3px;
+}
+
+span.route-icon {
+  display: inline-block;
+  width: 20px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 4.5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+#name-list, #name-field {
+  width: 100%;
+  height: 29px;
+  margin-bottom: 10px;
+}
+
+button, .file-upload {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+#scale-number {
+  width: 80px;
+  height: 29px;
+}
+
+#scale-unit {
+  width: 45px;
+  height: 29px;
+}
+
+#result {
+  border: 1px solid #000;
+  background-color: #eee;
+
+}
+
+#result ul {
+  padding: 10px;
+  margin: 0;
+  list-style-type: none;
+}
