@@ -208,11 +208,11 @@ function createSvgElement(element, eldict) {
 
 function addPath(from, to) {
   var id1 = from.data("node-id");
-  var x1 = Number(from.position().left) + Number(from.attr("r"));
-  var y1 = Number(from.position().top) + Number(from.attr("r"));
+  var x1 = Number(from.position().left) -230;
+  var y1 = Number(from.position().top) + Number(from.attr("r")) - 8;
   var id2 = to.data("node-id");
-  var x2 = Number(to.position().left) + Number(to.attr("r"));
-  var y2 = Number(to.position().top) + Number(to.attr("r"));
+  var x2 = Number(to.position().left) -230;
+  var y2 = Number(to.position().top) + Number(to.attr("r")) - 8;
   var distance = Math.abs(Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
   var pathId = id1 + "-" + id2;
   var line = createSvgElement('line', {
@@ -354,7 +354,7 @@ function circleClickEvent(event) {
 
 $("#mapper svg").click(function(event) {
   var nodeId = "node-" + String(id++);
-  var left = event.pageX - 440;
+  var left = event.pageX - svgOffset.left;
   var top = event.pageY - svgOffset.top;
   var circle;
   if (lastCircle == undefined) {
