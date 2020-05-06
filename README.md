@@ -1,2 +1,2 @@
 # maprouter-with-dijkstra
-Dijkstra Algo
+Maprouter with various mathematical Algorithms.
